@@ -21,7 +21,8 @@ export default function SignUpPage() {
     axios.post(`${import.meta.env.VITE_API_URL}/sign-up`, form)
 
       .then(res => {
-        console.log(res.data)
+          alert("Cadastro realizado!")
+          navigate("/")        
       })
       .catch(err => alert(err.message.data))
   }

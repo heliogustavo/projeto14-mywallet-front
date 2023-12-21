@@ -1,6 +1,5 @@
 import { useLocation, useParams } from "react-router-dom"
 import { TransactionsContainer } from "./styled"
-// import useForm from "../../hooks/useForm"
 
 export default function EditTransactionsPage() {
   const { type } = useParams()
