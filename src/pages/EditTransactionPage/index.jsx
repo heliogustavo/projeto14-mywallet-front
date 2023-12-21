@@ -1,16 +1,12 @@
-import useQuickOut from "../../hooks/useQuickOut"
 import { useLocation, useParams } from "react-router-dom"
 import { TransactionsContainer } from "./styled"
 // import useForm from "../../hooks/useForm"
-import { useEditTransaction } from "../../services/transactions"
 
 export default function EditTransactionsPage() {
   const { type } = useParams()
   const { state: { _id, description, value, type: apiType } } = useLocation()
   const { form, handleForm } = useForm({ description, value })
   const typeText = type === "entrada" ? "Entrada" : "Saída"
-  useQuickOut()
-  const editTransaction = useEditTransaction()
 
   function submitForm(e) {
     e.preventDefault()

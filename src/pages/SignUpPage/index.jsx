@@ -1,13 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
 import MyWalletLogo from "../../components/MyWalletLogo/MyWalletLogo"
-import { useSignUp } from "../../services/auth"
 import { SingUpContainer } from "./styled"
 import { useState } from "react"
 import axios from "axios"
 
 export default function SignUpPage() {
   const [form, setForm ] = useState({ name: "", email: "", password: "", confirmPassword: "" })
-  const signUp = useSignUp()
   const navigate = useNavigate()
 
   function handleForm(e) {

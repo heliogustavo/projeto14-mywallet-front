@@ -1,15 +1,11 @@
 import { Link, useNavigate } from "react-router-dom"
 import MyWalletLogo from "../../components/MyWalletLogo/MyWalletLogo"
-import useQuickIn from "../../hooks/useQuickIn"
-// import useForm from "../../hooks/useForm"
-import { useLogin } from "../../services/auth"
 import { LoginContainer } from "./styled"
 import axios from "axios"
 import { useState } from "react"
 
 export default function LoginPage() {
   const [ form, setForm ] = useState({email: "", password: ""})
-  //const signUp = useSignUp()
   const navigate = useNavigate()
 
   function handleForm(e) {

@@ -1,14 +1,10 @@
-import useQuickOut from "../../hooks/useQuickOut"
 import { useParams } from "react-router-dom"
-import { useAddTransaction } from "../../services/transactions"
 import { TransactionsContainer } from "./styled"
 
 export default function AddTransactionsPage() {
   const { form, handleForm } = useForm({ description: "", value: "" })
   const { type } = useParams()
   const typeText = type === "entrada" ? "Entrada" : "Saída"
-  const addTransaction = useAddTransaction()
-  useQuickOut()
 
   function submitForm(e) {
     e.preventDefault()

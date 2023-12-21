@@ -1,7 +1,6 @@
 import { Value, ItemContainer, RightContainer } from "./styled"
 import dayjs from "dayjs"
 import { IoMdClose } from "react-icons/io"
-import { useDeleteTransaction } from "../../services/transactions"
 import { useNavigate } from "react-router-dom"
 
 export default function TransactionItem({ transaction, getTransactions }) {

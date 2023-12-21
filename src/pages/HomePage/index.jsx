@@ -1,12 +1,9 @@
 import { BiExit } from "react-icons/bi"
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai"
-import useQuickOut from "../../hooks/useQuickOut"
 import { useContext } from "react"
 import AuthContext from "../../contexts/AuthContext"
-import { useLogout } from "../../services/auth"
 import TransactionItem from "../../components/TransactionItem/TransactionItem"
 import { Oval } from "react-loader-spinner"
-import { useGetTransactions } from "../../services/transactions"
 import { useNavigate } from "react-router-dom"
 import { HomeContainer, Header, TransactionsContainer, ListContainer, Value, ButtonsContainer } from "./styled"
 import { mainColor, mainColorLight } from "../../constants/colors"
@@ -14,9 +11,7 @@ import { mainColor, mainColorLight } from "../../constants/colors"
 export default function HomePage() {
   const { userName } = useContext(AuthContext)
   const navigate = useNavigate()
-  const logout = useLogout()
   const { transactions, getTransactions } = useGetTransactions()
-  useQuickOut()
 
   function calcBalance() {
     const sum = transactions.reduce((acc, cur) => cur.type === "income" ? acc + cur.value : acc - cur.value, 0)
