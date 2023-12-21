@@ -9,5 +9,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <ResetStyle />
     <GlobalStyle />
     <App />
-  </React.StrictMode>
+  </React.StrictMode  >
 )
