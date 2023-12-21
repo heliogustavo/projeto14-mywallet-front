@@ -1,7 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
 import MyWalletLogo from "../../components/MyWalletLogo/MyWalletLogo"
-import useQuickIn from "../../hooks/useQuickIn"
-//import useForm from "../../hooks/useForm"
 import { useSignUp } from "../../services/auth"
 import { SingUpContainer } from "./styled"
 import { useState } from "react"
@@ -22,7 +20,7 @@ export default function SignUpPage() {
      return;
     }
     delete form.confirmPassword
-    axios.post(`${import.meta.env.VITE_API_URL}/sing-up`, form)
+    axios.post(`${import.meta.env.VITE_API_URL}/sign-up`, form)
 
       .then(res => {
         console.log(res.data)
