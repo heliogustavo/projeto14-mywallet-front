@@ -23,6 +23,7 @@ export default function SignUpPage() {
       <form onSubmit={submitForm}>
         <MyWalletLogo />
         <input
+        data-test="name"
           required
           placeholder="Nome"
           name="name"
@@ -30,6 +31,7 @@ export default function SignUpPage() {
           onChange={handleForm}
         />
         <input
+          data-test="email"
           required
           type="email"
           autoComplete="username"
@@ -39,6 +41,7 @@ export default function SignUpPage() {
           onChange={handleForm}
         />
         <input
+          data-test="password"
           required
           minLength={3}
           type="password"
@@ -49,6 +52,7 @@ export default function SignUpPage() {
           onChange={handleForm}
         />
         <input
+          data-test="conf-password"
           required
           minLength={3}
           type="password"
@@ -58,7 +62,7 @@ export default function SignUpPage() {
           value={form.confirmPassword}
           onChange={handleForm}
         />
-        <button type="submit">Cadastrar</button>
+        <button data-test="sign-up-submit" type="submit">Cadastrar</button>
       </form>
 
       <Link to="/">

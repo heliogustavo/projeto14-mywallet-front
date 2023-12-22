@@ -20,6 +20,7 @@ export default function LoginPage() {
       <form onSubmit={submitForm}>
         <MyWalletLogo />
         <input
+          data-test="email"
           required
           type="email"
           autoComplete="username"
@@ -29,6 +30,7 @@ export default function LoginPage() {
           onChange={handleForm}
         />
         <input
+          data-test="password"
           required
           minLength={3}
           type="password"
@@ -38,7 +40,7 @@ export default function LoginPage() {
           value={form.password}
           onChange={handleForm}
         />
-        <button type="submit">Entrar</button>
+        <button data-test="sign-up-submit" type="submit">Entrar</button>
       </form>
 
       <Link to="/cadastro">

@@ -28,8 +28,8 @@ export default function HomePage() {
   return (
     <HomeContainer>
       <Header>
-        <h1>Olá, {userName}</h1>
-        <BiExit onClick={logout} />
+        <h1 data-test="user-name">Olá, {userName}</h1>
+        <BiExit data-test="logout" onClick={logout} />
       </Header>
 
       <TransactionsContainer>
@@ -42,7 +42,7 @@ export default function HomePage() {
             </ul>
             <article>
               <strong>Saldo</strong>
-              <Value color={balance > 0 ? "positivo" : "negativo"}>{balance.toString().replace(".", ",")}</Value>
+              <Value data-test="total-amount" color={balance > 0 ? "positivo" : "negativo"}>{balance.toString().replace(".", ",")}</Value>
             </article>
           </ListContainer>
         )}
@@ -50,11 +50,11 @@ export default function HomePage() {
 
 
       <ButtonsContainer>
-        <button onClick={() => navigate("/nova-transacao/entrada")}>
+        <button data-test="new-income" onClick={() => navigate("/nova-transacao/entrada")}>
           <AiOutlinePlusCircle />
           <p>Nova <br /> entrada</p>
         </button>
-        <button onClick={() => navigate("/nova-transacao/saida")}>
+        <button data-test="new-expense" onClick={() => navigate("/nova-transacao/saida")}>
           <AiOutlineMinusCircle />
           <p>Nova <br />saída</p>
         </button>

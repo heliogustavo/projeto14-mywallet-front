@@ -22,6 +22,7 @@ export default function EditTransactionsPage() {
       <h1>Editar {typeText}</h1>
       <form onSubmit={submitForm}>
         <input
+          data-test="registry-amount-input"
           required
           type="number"
           placeholder="Valor"
@@ -30,13 +31,14 @@ export default function EditTransactionsPage() {
           onChange={handleForm}
         />
         <input
+          data-test="registry-name-input"
           required
           placeholder="Descrição"
           name="description"
           value={form.description}
           onChange={handleForm}
         />
-        <button type="submit">Atualizar {typeText}</button>
+        <button data-test="registry-save" type="submit">Atualizar {typeText}</button>
       </form>
     </TransactionsContainer>
   )

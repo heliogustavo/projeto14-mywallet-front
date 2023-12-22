@@ -25,11 +25,11 @@ export default function TransactionItem({ transaction, getTransactions }) {
     <ItemContainer>
       <div>
         <span>{dayjs(date).format("DD/MM")}</span>
-        <strong onClick={onClickEdit}>{description}</strong>
+        <strong data-test="registry-name" onClick={onClickEdit}>{description}</strong>
       </div>
       <RightContainer>
-        <Value color={type}>{value.toFixed(2).toString().replace(".", ",")}</Value>
-        <IoMdClose onClick={onClickDelete} />
+        <Value data-test="registry-amount" color={type}>{value.toFixed(2).toString().replace(".", ",")}</Value>
+        <IoMdClose data-test="registry-delete" onClick={onClickDelete} />
       </RightContainer>
     </ItemContainer>
   )
