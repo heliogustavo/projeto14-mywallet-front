@@ -40,7 +40,7 @@ export default function LoginPage() {
           value={form.password}
           onChange={handleForm}
         />
-        <button data-test="sign-up-submit" type="submit">Entrar</button>
+        <button data-test="sign-in-submit" type="submit">Entrar</button>
       </form>
 
       <Link to="/cadastro">
